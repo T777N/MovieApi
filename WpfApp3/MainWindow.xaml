@@ -114,7 +114,7 @@
             <TextBox Name="movieTextbox" Grid.Row="1" FontSize="26" Text="" VerticalAlignment="Center" />
             <Button Content="Search" Grid.Row="1"  Width="100" Height="50" Grid.Column="2" FontSize="26" Click="Button_Click"></Button>
 
-        </Grid>
+        </Grid> 
 
     </Grid>
 </Window>
