@@ -1,0 +1,120 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="700">
+
+    <!--<Window.Resources>
+        <ControlTemplate x:Key="ellipseBtn" TargetType="Button">
+            <Grid>
+                <Ellipse Name="EllipseBtn"
+                         Height="100" Width="150">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#00bfff" Offset="0"></GradientStop>
+                            <GradientStop Color="#00ff7f" Offset="1"></GradientStop>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                    
+                </Ellipse>
+                <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Content}"
+                                  HorizontalAlignment="Center" VerticalAlignment="Center">
+                    
+                </ContentPresenter>
+            </Grid>
+            
+        </ControlTemplate>
+    </Window.Resources>-->
+
+
+    <Grid>
+
+        <!--<Button Click="Button_Click" Width="150" Height="100"  HorizontalAlignment="Left" FontSize="18" Template="{StaticResource ellipseBtn}">
+            Hello WPF
+        </Button>-->
+
+
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Name="movieLabel"
+               Panel.ZIndex="1"
+               Height="100" Width="600" Margin="-70,-370,10,10"
+               FontSize="30"
+               FontFamily="Comic Sans MS"
+               Foreground="White"
+               Background="Transparent"
+               
+        ></Label>
+
+        <StackPanel>
+            <Canvas>
+
+
+
+                <Image Width="700" Canvas.Top="-3" Canvas.Left="-3" Height="500" Stretch="Fill" Source="{Binding ImagePath}" Name="movieImageB"  >
+                    <Image.Effect>
+                        <BlurEffect Radius="15" KernelType="Gaussian"></BlurEffect>
+                    </Image.Effect>
+                </Image>
+
+                <Image Panel.ZIndex="2"  Canvas.Top="100"  Canvas.Left="200" Source="{Binding ImagePath}" Name="movieImage" Width="300" Height="300"></Image>
+
+            </Canvas>
+
+            <Grid>
+                <Image Source="images/left.png"
+                          Height="80" Width="100"
+                          Margin="-500,200,10,10"  ></Image>
+
+                <Image Source="images/rb.png"
+                          Height="80" Width="100"
+                          Margin="500,200,10,10"  ></Image>
+
+                <!--<Image Source="images/r.jpg"></Image>-->
+                <Button Margin="556,210,66,24"
+                        Background="Transparent"
+                        Foreground="White"
+                        FontSize="30"
+                        Click="Button_Click_1">
+                    
+                </Button>
+                       <Button Background="Transparent" Width="70"
+                        Height="70" Margin="26,-41,536,-231"
+                        
+                        Foreground="White"
+                        FontSize="30"
+                        Click="Button_Click_2"
+                        ></Button>
+
+                <Grid Width="100"
+                        Height="70" Margin="56,231,536,-231">
+
+
+                    
+
+
+                </Grid>
+
+            </Grid>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Name="movieTextbox" Grid.Row="1" FontSize="26" Text="" VerticalAlignment="Center" />
+            <Button Content="Search" Grid.Row="1"  Width="100" Height="50" Grid.Column="2" FontSize="26" Click="Button_Click"></Button>
+
+        </Grid>
+
+    </Grid>
+</Window>
